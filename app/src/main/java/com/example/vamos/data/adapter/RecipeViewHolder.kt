@@ -9,9 +9,12 @@ import com.example.vamos.databinding.ItemShortBinding
 class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemShortBinding.bind(view)
 
-    fun bind(item: RecipesResponseItem) {
+    fun bind(item: RecipesResponseItem, onClickListener: (RecipesResponseItem) -> Unit) {
         binding.tvName.text = item.name
         binding.ivPhoto.load(item.photo)
+        itemView.setOnClickListener {
+            onClickListener(item)
+        }
     }
 }
 

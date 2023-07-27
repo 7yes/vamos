@@ -1,6 +1,7 @@
 package com.example.vamos.ui.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -42,8 +43,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRV() {
-        adapter = RecipeAdapter(recipesList)
+        adapter = RecipeAdapter(recipesList) { onItemSelected(it) }
         binding.rvRecipes.layoutManager = LinearLayoutManager(this)
         binding.rvRecipes.adapter = adapter
+    }
+
+    fun onItemSelected(item: RecipesResponseItem){
+        Toast.makeText(this,item.name,Toast.LENGTH_SHORT).show()
     }
 }
