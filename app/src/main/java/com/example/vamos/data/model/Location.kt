@@ -5,4 +5,3 @@ data class Location(
     val latitud: Double,
     val longitud: Double
 )
-

@@ -1,6 +1,6 @@
 package com.example.vamos.data.model
 
-data class RecipeModel(
+data class RecipesResponseItem(
     val description: String,
     val ingredients: List<String>,
     val location: Location,

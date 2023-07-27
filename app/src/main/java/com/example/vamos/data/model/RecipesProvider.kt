@@ -5,5 +5,5 @@ import javax.inject.Singleton
 
 @Singleton
 class RecipesProvider @Inject constructor() {
-    var recipes: List<RecipeModel> = emptyList()
+    var recipes: List<RecipesResponseItem> = emptyList()
 }
