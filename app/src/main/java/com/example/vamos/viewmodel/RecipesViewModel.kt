@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RecipesViewModel @Inject constructor(private var getRecipesUseCase: GetRecipesUseCase) :
     ViewModel() {
-    val recipeListModel = MutableLiveData<RecipesResponseItem>()
+    val recipeListModel = MutableLiveData<List<RecipesResponseItem>>()
     val isLoading = MutableLiveData<Boolean>()
 
     fun onCreate(){
@@ -22,6 +22,7 @@ class RecipesViewModel @Inject constructor(private var getRecipesUseCase: GetRec
             val result:List<RecipesResponseItem> = getRecipesUseCase()
             Log.d("TAJ", "onCreatea: $result ")
             if(!result.isNullOrEmpty()){
+              recipeListModel.postValue(result)
                 isLoading.postValue(false)
             }
         }
