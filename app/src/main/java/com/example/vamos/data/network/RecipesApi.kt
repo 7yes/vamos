@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface RecipesApi {
-    @GET
+    @GET("recetas")
     suspend fun getAllRecipes():Response<List<RecipeModel>>
 }
