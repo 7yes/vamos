@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onItemSelected(item: RecipesResponseItem){
         Toast.makeText(this,item.name,Toast.LENGTH_SHORT).show()
-        val intent= Intent(this,DetailActivity::class.java)
-        startActivity(intent)
+//        val intent= Intent(this,DetailActivity::class.java)
+//        startActivity(intent)
     }
 }
