@@ -1,5 +1,6 @@
 package com.example.vamos.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -50,5 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onItemSelected(item: RecipesResponseItem){
         Toast.makeText(this,item.name,Toast.LENGTH_SHORT).show()
+        val intent= Intent(this,DetailActivity::class.java)
+        startActivity(intent)
     }
 }
